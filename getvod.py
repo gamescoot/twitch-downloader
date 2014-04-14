@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys, urllib2, json
-
+from subprocess import call
 if len(sys.argv) < 2:
 				sys.exit("Usage: getvod.py <video-id>")
 
@@ -11,7 +11,11 @@ try:
 				data = json.loads(response.read())
 except:
 				sys.exit("Looks like something went wrong - perhaps you entered an incorrect Video ID?")
-
+call(["add-apt-repository", "ppa:nilarimogard/webupd8"])
+call(["apt-get", "update"])
+call(["apt-get", "install", "grive"])
+call(["cd","drive/"])
+call(["gdrive","-a"])
 for video_part in data:
 				flv = video_part["video_file_url"]
 				file_name = flv.split('/')[-1]
@@ -34,3 +38,6 @@ for video_part in data:
 								sys.stdout.write("\r%s"  % status)
 								sys.stdout.flush()
 				f.close()
+				call(["gdrive"])
+				call(["rm",filename])
+				
