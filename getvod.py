@@ -37,6 +37,6 @@ for video_part in data:
 								sys.stdout.write("\r%s"  % status)
 								sys.stdout.flush()
 				f.close()
-				call(["gdrive"])
+				call(["grive"])
 				call(["rm",filename])
 				
