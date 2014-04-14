@@ -14,7 +14,7 @@ except:
 call(["add-apt-repository", "ppa:nilarimogard/webupd8"])
 call(["apt-get", "update"])
 call(["apt-get", "install", "grive"])
-call(["gdrive","-a"])
+call(["grive","-a"])
 for video_part in data:
 				flv = video_part["video_file_url"]
 				file_name = flv.split('/')[-1]
