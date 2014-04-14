@@ -38,5 +38,5 @@ for video_part in data:
 								sys.stdout.flush()
 				f.close()
 				call(["grive"])
-				call(["rm",filename])
+				call(["rm",file_name])
 				
